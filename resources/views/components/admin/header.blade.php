@@ -111,13 +111,17 @@
                                 class="avatar avatar-online"><img
                                     src="{{ asset('/assets/templates/app-assets/images/portrait/small/avatar-s-19.png') }}"
                                     alt="avatar"><i></i></span></a>
-                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item"
-                                href="user-profile.html"><i class="ft-user"></i> Edit Profile</a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="{{ route('admin.profile') }}"><i class="ft-user"></i> Edit
+                                Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#"><i class="ft-alert-circle"></i> Reset
+                                Password</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="ft-power"></i> Logout
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                <form id="logout-form" action="{{ route('admin.logout') }}" method="POST"
                                     style="display: none;">
                                     @csrf
                                 </form>

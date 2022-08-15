@@ -24,10 +24,10 @@
 
     {{-- @include('sweetalert::alert') --}}
 
-    @include('components.header')
-    @include('components.menu-admin')
+    @include('components.admin.header')
+    @include('components.admin.menu')
     @yield('content')
-    @include('components.footer')
+    @include('components.admin.footer')
 
     @stack('before-script')
     @include('includes.script')

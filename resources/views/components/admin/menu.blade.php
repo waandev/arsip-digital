@@ -4,7 +4,7 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
             <li class="{{ request()->is('dashboard') || request()->is('dashboard/*') ? 'active' : '' }}">
-                <a href="#">
+                <a href="{{ route('admin.index') }}">
                     <i
                         class="{{ request()->is('dashboard') || request()->is('dashboard/*') ? 'bx bxs-dashboard bx-flashing' : 'bx bxs-dashboard' }}"></i><span
                         class="menu-title" data-i18n="Dashboard">Dashboard</span>
