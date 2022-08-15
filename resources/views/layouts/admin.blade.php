@@ -1,39 +1,38 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="loading" lang="en" data-textdirection="ltr">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    @include('includes.meta')
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title') | Sistem Informasi Arsip Digital</title>
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    <link rel="apple-touch-icon" href="{{ asset('/assets/templates/app-assets/images/ico/apple-icon-120.png') }}">
+    <link rel="shortcut icon" type="image/x-icon"
+        href="{{ asset('/assets/templates/app-assets/images/ico/favicon.ico') }}">
+    <link
+        href="{{ url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700') }}"
+        rel="stylesheet">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @stack('before-style')
+    @include('includes.style')
+    @stack('after-style')
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
-<body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-800">
-        @include('admin.partials.navigation')
+<body class="vertical-layout vertical-menu 2-columns fixed-navbar" data-open="click" data-menu="vertical-menu"
+    data-col="2-columns">
 
-        <!-- Page Heading -->
-        <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                {{ $header }}
-            </div>
-        </header>
+    {{-- @include('sweetalert::alert') --}}
 
-        <!-- Page Content -->
-        <main>
-            {{ $slot }}
-        </main>
-    </div>
+    @include('components.header')
+    @include('components.menu-admin')
+    @yield('content')
+    @include('components.footer')
+
+    @stack('before-script')
+    @include('includes.script')
+    @stack('after-script')
+
 </body>
 
 </html>
