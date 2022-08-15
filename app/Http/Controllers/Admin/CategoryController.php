@@ -46,7 +46,7 @@ class CategoryController extends Controller
         // store to database
         $category = Category::create($data);
 
-        // alert()->success('Success Message', 'Successfully added new category');
+        alert()->success('Success Message', 'Successfully added new category');
         return redirect()->route('admin.category.index');
     }
 
@@ -86,7 +86,7 @@ class CategoryController extends Controller
         // update to database
         $category->update($data);
 
-        //  alert()->success('Success Message', 'Successfully updated specialist');
+        alert()->success('Success Message', 'Successfully updated category');
         return redirect()->route('admin.category.index');
     }
 
@@ -100,7 +100,7 @@ class CategoryController extends Controller
     {
         $category->delete();
 
-        // alert()->success('Success Message', 'Successfully deleted specialist');
+        alert()->success('Success Message', 'Successfully deleted category');
         return back();
     }
 }
