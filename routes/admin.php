@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,5 +41,10 @@ Route::prefix('admin')->group(static function () {
         // General routes
         Route::get('/', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');
         Route::get('profile', [\App\Http\Controllers\Admin\AdminController::class, 'profile'])->middleware('password.confirm.admin')->name('admin.profile');
+    });
+
+    // Operational Routes
+    Route::group(['prefix' => '', 'as' => 'admin.', 'middleware' => ['auth:admin', 'verified']], function () {
+        Route::resource('category', CategoryController::class);
     });
 });

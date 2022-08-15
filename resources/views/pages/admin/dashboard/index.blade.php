@@ -103,7 +103,7 @@
                                     </div>
                                     <div class="media-body text-right">
                                         <h5 class="text-muted text-bold-500">Kategori Arsip</h5>
-                                        <h3 class="text-bold-600">179</h3>
+                                        <h3 class="text-bold-600">{{ $total_category }}</h3>
                                     </div>
                                 </div>
                             </div>

@@ -3,18 +3,18 @@
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
-            <li class="{{ request()->is('dashboard') || request()->is('dashboard/*') ? 'active' : '' }}">
+            <li class="{{ request()->is('admin') || request()->is('admin') ? 'active' : '' }}">
                 <a href="{{ route('admin.index') }}">
                     <i
-                        class="{{ request()->is('dashboard') || request()->is('dashboard/*') ? 'bx bxs-dashboard bx-flashing' : 'bx bxs-dashboard' }}"></i><span
+                        class="{{ request()->is('admin') || request()->is('admin') ? 'bx bxs-dashboard bx-flashing' : 'bx bxs-dashboard' }}"></i><span
                         class="menu-title" data-i18n="Dashboard">Dashboard</span>
                 </a>
             </li>
 
-            <li class="{{ request()->is('category') || request()->is('category/*') ? 'active' : '' }}">
-                <a href="#">
+            <li class="{{ request()->is('admin/category') || request()->is('admin/category/*') ? 'active' : '' }}">
+                <a href="{{ route('admin.category.index') }}">
                     <i
-                        class="{{ request()->is('category') || request()->is('category/*') ? 'bx bx-category-alt bx-flashing' : 'bx bx-category-alt' }}"></i><span
+                        class="{{ request()->is('admin/category') || request()->is('admin/category/*') ? 'bx bx-category-alt bx-flashing' : 'bx bx-category-alt' }}"></i><span
                         class="menu-title" data-i18n="Category">Data Kategori</span>
                 </a>
             </li>
